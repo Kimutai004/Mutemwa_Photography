@@ -178,12 +178,12 @@ header .bottom {
     width: 4px;
     background-color: #000;
     position: absolute;
-    top: 870px;
-    left: 170px;
+    top: 670px;
+    left: 120px;
 }
 
 .meet .copy {
-    margin-left: 250px;
+    margin-left: 170px;
     margin-top: 200px;
 }
 
@@ -210,9 +210,13 @@ header .bottom {
 
 section .right {
     position: absolute;
-    left: 950px;
-    top: 900px;
-    gap: 20px;
+    left: 770px;
+    top: 670px;
+}
+section .right-2 {
+    position: absolute;
+    left: 1000px;
+    top: 670px;
 }
 
 .previous-work {
