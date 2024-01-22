@@ -35,3 +35,34 @@ function showPhotos(category) {
         .catch(error => console.error('Error:', error));
 }
 
+// Add this function to load some initial photos when the page is loaded
+function loadInitialPhotos() {
+    // Set the initial category to 'all'
+    currentCategory = 'all';
+    
+    // Load some initial photos for the 'all' category
+    showPhotos(currentCategory);
+
+    // You can adjust the number of initial photos loaded or fetch them from your server
+}
+
+// Add an event listener to call loadInitialPhotos when the page is loaded
+document.addEventListener('DOMContentLoaded', loadInitialPhotos);
+
+function loadMorePhotos() {
+    currentPage++; // Increment the current page before fetching more photos
+    showPhotos(currentCategory); // Call the showPhotos function with the current category
+}
+
+// Add this function to update the current category when a category is clicked
+function updateCategory(category) {
+    currentCategory = category;
+    currentPage = 1; // Reset current page when category changes
+    showPhotos(currentCategory);
+}
+
+// Add event listeners for category clicks
+document.getElementById('all_photos').addEventListener('click', () => updateCategory('all'));
+document.getElementById('check2').addEventListener('click', () => updateCategory('studio'));
+document.getElementById('check3').addEventListener('click', () => updateCategory('outdoor'));
+document.getElementById('check4').addEventListener('click', () => updateCategory('babybump'));
